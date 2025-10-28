@@ -1,0 +1,356 @@
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: white;
+  flex: 1;
+}
+
+.chat-window-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  flex: 1;
+}
+
+.empty-state {
+  text-align: center;
+  max-width: 400px;
+  padding: 40px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.empty-state p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.chat-window-header {
+  padding: 20px 24px;
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-info {
+  display: flex;
+  align-items: center;
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 16px;
+}
+
+.chat-details h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.chat-status {
+  color: #28a745;
+  font-size: 14px;
+}
+
+.edit-chat-btn {
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-chat-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.no-messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  max-width: 70%;
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.message-bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.user .message-bubble {
+  background-color: #e9ecef;
+  color: #333;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot .message-bubble {
+  background-color: #343a40;
+  color: white;
+  border-bottom-left-radius: 4px;
+}
+
+.message-content p {
+  margin: 0 0 4px 0;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #999;
+  margin-top: 4px;
+  padding: 0 4px;
+}
+
+.message.user .message-time {
+  text-align: right;
+}
+
+.typing-indicator {
+  opacity: 0.8;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  display: inline-block;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.message-sender-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
+.message.user .message-sender-name {
+  text-align: right;
+  padding-right: 2px;
+  padding-left: 0;
+}
+
+.edit-message-container {
+  position: relative;
+}
+
+.edit-message-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+}
+
+.edit-message-input:focus {
+  border-color: #007bff;
+}
+
+.edit-message-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.save-btn, .cancel-btn {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #545b62;
+}
+
+.message-bubble {
+  position: relative;
+}
+
+.edit-message-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.edit-message-btn:hover {
+  background: #0056b3;
+}
+
+.message.user .message-bubble:hover .edit-message-btn {
+  display: flex;
+}
+
+.edit-message-container {
+  min-width: 200px;
+}
+
+.edit-message-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.edit-message-input:focus {
+  border-color: #007bff;
+}
+
+.edit-message-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.save-btn, .cancel-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+}
