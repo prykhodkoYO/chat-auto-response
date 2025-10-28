@@ -16,7 +16,8 @@ const LoginButton: React.FC<LoginButtonProps> = ({ compact = false }) => {
         return;
       }
 
-      const response = await fetch('http://localhost:3001/api/auth/google', {
+      const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${API_BASE_URL}/auth/google`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
