@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "tsc && node dist/app.js",
+    "dev": "nodemon src/app.ts",
     "dev:watch": "tsc --watch & nodemon dist/app.js",
     "seed": "tsc && node dist/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
