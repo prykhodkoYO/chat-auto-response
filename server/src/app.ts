@@ -21,10 +21,19 @@ const corsOptions = {
     ? process.env.FRONTEND_URL || 'https://your-vercel-app.vercel.app'
     : ['http://localhost:3000', 'http://localhost:3001'],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
+
+// Add security headers to help with COOP issues
+app.use((req, res, next) => {
+  res.header('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+  res.header('Cross-Origin-Embedder-Policy', 'unsafe-none');
+  next();
+});
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
